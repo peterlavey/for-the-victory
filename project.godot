@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Stage",
+"class": "Dungeon",
+"language": "GDScript",
+"path": "res://src/stage/dungeon.gd"
+}, {
+"base": "Node2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://src/game/game.gd"
+}, {
+"base": "Node",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/player/player.gd"
+}, {
+"base": "Node",
+"class": "Stage",
+"language": "GDScript",
+"path": "res://src/stage/stage.gd"
+} ]
+_global_script_class_icons={
+"Dungeon": "",
+"Game": "",
+"Player": "",
+"Stage": ""
+}
+
+[application]
+
+config/name="For the victory"
+config/icon="res://icon.png"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
