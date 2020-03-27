@@ -9,9 +9,12 @@ func _ready():
 	init()
 
 func init()-> void:
-	add_players()
+	add_stage()
+	#add_players()
 	config_signals()
-	players[0].moveUp()
+
+func add_stage()-> void:
+	add_child(stage)
 
 func add_players()-> void:
 	var player1 = Player.new()
@@ -23,6 +26,8 @@ func add_players()-> void:
 	add_child(player1)
 	
 	players = get_tree().get_nodes_in_group("players")
+	#quitar esto
+	players[0].moveUp()
 
 func config_signals()-> void:
 	for player in players:

@@ -5,8 +5,8 @@ func _init():
 
 func initTerrain()-> void:
 	terrain = [
-		[0, 1, 0, 0],
-		[0, 1, 0, 0],
-		[0, 1, 1, 1],
-		[0, 0, 0, 0]
+		[BUSH, WALL, BUSH, BUSH],
+		[BUSH, WALL, BUSH, BUSH],
+		[BUSH, WALL, WALL, WALL],
+		[BUSH, BUSH, BUSH, BUSH]
 	]
