@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/game/game.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/player/player.gd"
@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Stage",
 "language": "GDScript",
 "path": "res://src/stage/stage.gd"
+}, {
+"base": "Player",
+"class": "Thief",
+"language": "GDScript",
+"path": "res://src/player/thief.gd"
 } ]
 _global_script_class_icons={
 "Dungeon": "",
 "Game": "",
 "Player": "",
-"Stage": ""
+"Stage": "",
+"Thief": ""
 }
 
 [application]

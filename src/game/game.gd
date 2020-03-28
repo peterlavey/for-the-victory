@@ -1,6 +1,6 @@
 class_name Game extends Node2D
 
-var Player = load("res://src/player/player.gd")
+var Thief = load("res://src/player/thief.gd")
 var players: Array
 var stage: Stage = load("res://src/stage/dungeon.gd").new()
 
@@ -10,24 +10,23 @@ func _ready():
 
 func init()-> void:
 	add_stage()
-	#add_players()
+	add_players()
 	config_signals()
 
 func add_stage()-> void:
 	add_child(stage)
 
 func add_players()-> void:
-	var player1 = Player.new()
+	var player1 = Thief.new()
 	
 	player1.id = 1
 	player1.nickname = "Peter"
-	player1.character = load("res://src/player/Thief.tscn")
-	
+	print(player1.strength)
+	print(player1.speed)
+	print(player1.healthPoints)
 	add_child(player1)
 	
 	players = get_tree().get_nodes_in_group("players")
-	#quitar esto
-	players[0].moveUp()
 
 func config_signals()-> void:
 	for player in players:

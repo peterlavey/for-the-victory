@@ -1,9 +1,9 @@
 class_name Stage extends Node2D
 
-var terrain: Array
+var terrain: Array = [1, 3, "asd", 3]
 var tileGreen = load("res://assets/tile-green.png")
 var tileGrey = load("res://assets/tile-grey.png")
-var tileSize = 32
+var tileSize: int = 32
 enum {
 	BUSH = 0,
 	WALL = 1

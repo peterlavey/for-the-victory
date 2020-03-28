@@ -1,6 +1,6 @@
 extends Node
 
-var world:Node
+var world: Node
 var game = load("res://src/game/game.gd").new()
 
 func _ready():

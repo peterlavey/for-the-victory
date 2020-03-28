@@ -1,9 +1,9 @@
 class_name Dungeon extends Stage
 
 func _init():
-	initTerrain()
+	init_terrain()
 
-func initTerrain()-> void:
+func init_terrain()-> void:
 	terrain = [
 		[BUSH, WALL, BUSH, BUSH],
 		[BUSH, WALL, BUSH, BUSH],
