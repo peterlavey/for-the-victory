@@ -1,8 +1,10 @@
 class_name Actions extends Node
 
 var player
+var stage
 enum {UP, RIGHT, DOWN, LEFT}
 var tileSize = 32
+const OUT_OF_INDEX = 99
 
 func _input(event):
 	if Input.is_action_pressed("ui_up"):
@@ -39,4 +41,20 @@ func move(direction):
 			currentPosition.y += player.speed * tileSize
 		LEFT:
 			currentPosition.x -= player.speed * tileSize
-	player.position = currentPosition
+	if(validate_move(currentPosition)):
+		player.position = currentPosition
+
+func validate_move(position)-> bool:
+	var tileCode = get_tile_code(position)
+	return tileCode != OUT_OF_INDEX && tileCode != 1
+
+func get_tile_code(position)-> int:
+	var y = position.y / tileSize
+	var x = position.x / tileSize
+	var maxY = stage.terrain.size() - 1
+	var maxX = stage.terrain[0].size() - 1
+	
+	if y <= maxY && x <= maxX:
+		return stage.terrain[y][x]
+	else:
+		return OUT_OF_INDEX

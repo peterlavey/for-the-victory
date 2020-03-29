@@ -31,4 +31,5 @@ func add_huds()-> void:
 
 func add_actions()-> void:
 	actions.player = players[0]
+	actions.stage = stage
 	add_child(actions)
