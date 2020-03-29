@@ -2,7 +2,7 @@ class_name Stage extends Node2D
 
 var terrain: Array = [1, 3, "asd", 3]
 var tileGreen = load("res://assets/tile-green.png")
-var tileGrey = load("res://assets/tile-grey.png")
+var tileGray = load("res://assets/tile-gray.png")
 var tileSize: int = 32
 enum {
 	BUSH = 0,
@@ -20,5 +20,5 @@ func draw_terrain():
 				BUSH:
 					tile = tileGreen
 				WALL:
-					tile = tileGrey
+					tile = tileGray
 			draw_texture(tile, Vector2(tileSize * j, tileSize * i))

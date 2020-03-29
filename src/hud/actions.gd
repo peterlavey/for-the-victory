@@ -6,7 +6,7 @@ enum {UP, RIGHT, DOWN, LEFT}
 var tileSize = 32
 const OUT_OF_INDEX = 99
 
-func _input(event):
+func _input(event)-> void:
 	if Input.is_action_pressed("ui_up"):
 		move_up()
 	elif Input.is_action_pressed("ui_right"):
@@ -16,20 +16,20 @@ func _input(event):
 	elif Input.is_action_pressed("ui_left"):
 		move_left()
 
-func move_up():
+func move_up()-> void:
 	move(UP)
 
-func move_right():
+func move_right()-> void:
 	move(RIGHT)
 
-func move_down():
+func move_down()-> void:
 	move(DOWN)
 
-func move_left():
+func move_left()-> void:
 	move(LEFT)
 
 #todo: SPEED * ALGUN BUFF QUE TENGA EN DECIMALES PARA SIMULAR PORCENTAJE
-func move(direction):
+func move(direction)-> void:
 	var currentPosition: Vector2 = player.position
 
 	match direction:
@@ -41,6 +41,7 @@ func move(direction):
 			currentPosition.y += player.speed * tileSize
 		LEFT:
 			currentPosition.x -= player.speed * tileSize
+
 	if(validate_move(currentPosition)):
 		player.position = currentPosition
 
