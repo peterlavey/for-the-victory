@@ -4,7 +4,9 @@ var world: Node
 var game = load("res://src/game/game.gd").new()
 
 func _ready():
-	config_world()
+	var deck = load("res://src/deck/deck.gd").new()
+	print(deck.get_deck())
+	#config_world()
 
 func config_world()-> void:
 	world = Node.new()
